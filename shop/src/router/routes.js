@@ -88,18 +88,10 @@ const routes=[
      {
         path:'/citys',
         component:Citys,
-        children:[
-            {
-                path:"/citys/one",
-                component:One
-            },{
-                path:"/citys/two",
-                component:Two
-            }
-        ]
+      
     },
      {
-        path:'/shops',
+        path:'/shops/:id',
         component:Shops
     },
      {

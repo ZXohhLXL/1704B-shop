@@ -8,11 +8,16 @@ function RouterView({routes}) {
     let redirectArr = routes.filter(item =>item.redirect);
 
     return <Switch>
-        {RouteArr.map(item => <Route key={item.path} path={item.path} render={(props) => {return <item.component routes={item.children}{...props}></item.component>}}/>)}
+
+    {/* city===>citys */}
+        {RouteArr.map(item => <Route key={item.path} path={item.path} render={(props)=>{
+            console.log("props===",props);
+            
+            return <item.component {...props}></item.component>
+        }}/>)}
             
            
         
-   {/* {RouteArr.map(item => <Route key={item.path} path={item.path} render={(props) => {return <item.component routes={item.children} {...props}></item.component>}}/>)}  */}
         {
             redirectArr.map(item=><Redirect from={item.path} to={item.redirect} key={item.path}></Redirect>)
         }
